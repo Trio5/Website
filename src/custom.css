@@ -1,0 +1,125 @@
+/* Product card base style */
+.product-card {
+  position: relative; /* Needed for absolute positioning of pseudo-element */
+  overflow: hidden; /* Ensures pseudo-element does not go outside the card */
+  border-radius: 25px; /* Match rounded corners */
+  transition: transform 0.3s ease-out; /* Smooth transform effect */
+}
+
+.product-card:hover {
+  transform: none; /* No scaling effect */
+}
+
+/* Thin black rectangle border on hover */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 8px; /* Slightly inset from the card edges */
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid rgb(255, 255, 255); /* Thin black lines */
+  border-radius: 25px; /* Match card border radius */
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s ease-in-out; /* Fade-in effect */
+  pointer-events: none; /* Prevent hover interference */
+  z-index: 10; /* Ensure it appears above the image */
+}
+
+.product-card:hover::before {
+  opacity: 1; /* Border fades in */
+}
+
+/* Image styling */
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image does not stretch */
+  border-radius: 25px; /* Rounded corners match the card */
+  display: block;
+}
+
+/* Optional box shadow for a better hover effect */
+.product-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Technology Section Card Styles */
+.technology-card {
+  width: 250px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.technology-card:hover {
+  transform: scale(1.05);
+}
+
+.technology-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.technology-card h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.technology-card p {
+  color: #ccc;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Apply Grid with Fixed Dimensions */
+.technology-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Preloader Wrapper */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #191919; /* Dark Background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Loader Animation */
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Make it a circle */
+  border: 5px solid transparent; /* Transparent border for the base */
+  border-top-color: #fff; /* Only show the top part of the border */
+  background-color: #191919; /* Solid color in the middle */
+  animation: spin 2s linear infinite; /* Spinning animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
