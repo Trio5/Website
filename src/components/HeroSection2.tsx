@@ -4,7 +4,7 @@ import AOS from 'aos'; // Import AOS
 import 'aos/dist/aos.css'; // Import AOS styles
 import { Link } from 'react-scroll'; // React-scroll for smooth scrolling
 
-export function HeroSection() {
+export function HeroSection2() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in ms
@@ -32,16 +32,23 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white max-w-7xl mx-auto">
         <div className="max-w-2xl">
+        <h2
+            className="text-4xl md:text-2xl font-bold mb-6 bg-white text-black dark:text-black rounded-3xl shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-500 ease-in-out px-2 py-2"
+            data-aos="fade-up"
+        >
+            About Us
+        </h2>
           <h1
-            className="text-5xl md:text-6xl font-bold mb-6 text-shadow-xl" // Added stronger text-shadow
-            data-aos="fade-up" // AOS fade-up animation for heading
+            className="text-5xl md:text-6xl font-bold mb-6 text-shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             Unleash Your Inner Hero
           </h1>
           <p
-            className="text-xl mb-8 text-shadow-lg" // Added stronger text-shadow
-            data-aos="fade-up" // AOS fade-up animation for paragraph
-            data-aos-delay="200" // Delay the paragraph's animation
+            className="text-xl mb-8 text-shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             Experience the next generation of foam dart blasters. <br />
             Engineered for performance, designed for victory.
@@ -49,12 +56,12 @@ export function HeroSection() {
 
           {/* Smooth Scroll Button */}
           <Link
-            to="products" // Targeting the ID of the featured products section
-            smooth={true} // Enable smooth scrolling
-            duration={500} // Duration of the scroll
-            className="bg-orange-500 text-white px-8 py-4 rounded-[25px] text-lg font-semibold hover:bg-orange-600 transition-colors" // Updated button with more round corners
-            data-aos="fade-up" // AOS fade-up animation for button
-            data-aos-delay="400" // Delay the button's animation
+            to="products"
+            smooth={true}
+            duration={500}
+            className="bg-orange-500 text-white px-8 py-4 rounded-[25px] text-lg font-semibold hover:bg-orange-600 transition-colors"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             Explore Collection
           </Link>
