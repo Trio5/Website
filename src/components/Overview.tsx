@@ -1,39 +1,49 @@
-import React from 'react';
-import { FileText, Clock } from 'lucide-react'; // Importing icons from Lucide React
+import React, { useEffect } from 'react';
+import { FileText, Clock } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Overview: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true,     // Animation happens only once when in view
+    });
+  }, []);
+
   return (
     <section
       style={{
         display: 'flex',
-        justifyContent: 'center', // Center content horizontally
+        justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'column', // Stack content vertically
+        flexDirection: 'column',
         marginTop: '60px',
         padding: '0 20px',
-        flexWrap: 'wrap', // Ensures responsiveness
+        flexWrap: 'wrap',
       }}
     >
       {/* Title and Description Section */}
       <div
         style={{
           textAlign: 'center',
-          marginBottom: '40px', // Space between text and the rest of the content
+          marginBottom: '40px',
         }}
+        data-aos="fade-up"
       >
         <h2
           style={{
             fontSize: '3.5rem',
             marginBottom: '20px',
             color: 'white',
-            textShadow: '0 0 8px white, 0 0 12px #B0B8B0', // White glowing effect
+            textShadow: '0 0 8px white, 0 0 12px #B0B8B0',
           }}
         >
           Overview
         </h2>
         <p
           style={{
-            fontSize: '1.2rem', // Reduced text size
+            fontSize: '1.2rem',
             color: '#B0B8B0',
             marginBottom: '30px',
           }}
@@ -50,7 +60,7 @@ const Overview: React.FC = () => {
           alignItems: 'flex-start',
           width: '100%',
           flexDirection: 'row',
-          flexWrap: 'wrap', // Ensures responsiveness
+          flexWrap: 'wrap',
         }}
       >
         {/* Text Content Section */}
@@ -58,7 +68,7 @@ const Overview: React.FC = () => {
           style={{
             flex: '1',
             paddingRight: '20px',
-            minWidth: '300px', // Ensures text container doesn't shrink too much
+            minWidth: '300px',
           }}
         >
           {/* Task Management Card */}
@@ -68,16 +78,17 @@ const Overview: React.FC = () => {
               color: 'white',
               padding: '20px',
               borderRadius: '10px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)', // Card shadow
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
               marginBottom: '20px',
-              animation: 'fadeUp 1s ease-in-out', // Fade-up effect
             }}
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px', // Space between icon and title
+                gap: '10px',
               }}
             >
               <FileText color="#B0B8B0" size={30} />
@@ -87,7 +98,7 @@ const Overview: React.FC = () => {
               style={{
                 fontSize: '1rem',
                 color: '#B0B8B0',
-                marginTop: '10px', // Space between title and description
+                marginTop: '10px',
               }}
             >
               Our task management feature helps you organize and prioritize your tasks, ensuring that everything is completed on time and to the highest standard.
@@ -101,15 +112,16 @@ const Overview: React.FC = () => {
               color: 'white',
               padding: '20px',
               borderRadius: '10px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)', // Card shadow
-              animation: 'fadeUp 1.5s ease-in-out', // Fade-up effect
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
             }}
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px', // Space between icon and title
+                gap: '10px',
               }}
             >
               <Clock color="#B0B8B0" size={30} />
@@ -119,7 +131,7 @@ const Overview: React.FC = () => {
               style={{
                 fontSize: '1rem',
                 color: '#B0B8B0',
-                marginTop: '10px', // Space between title and description
+                marginTop: '10px',
               }}
             >
               With progress monitoring, track your growth and development over time, ensuring you stay on top of your goals and achieve them effectively.
@@ -131,19 +143,20 @@ const Overview: React.FC = () => {
         <div
           style={{
             flex: '1',
-            minWidth: '300px', // Ensures image doesn't get too small on mobile
+            minWidth: '300px',
             paddingLeft: '20px',
-            animation: 'fadeUp 2s ease-in-out', // Fade-up effect
           }}
+          data-aos="fade-up"
+          data-aos-delay="300"
         >
           <img
-            src="https://media.discordapp.net/attachments/1289950260009111574/1318864408239276082/WT-banner.png?ex=6763dfb2&is=67628e32&hm=eadcdcd4dafa27cc6a014f257e6f2e3ccb8d765217a606e5ee1649df2965edd0&=&format=webp&quality=lossless&width=712&height=473" // Replace with actual image URL
+            src="https://media.discordapp.net/attachments/1289950260009111574/1318864408239276082/WT-banner.png?ex=6763dfb2&is=67628e32&hm=eadcdcd4dafa27cc6a014f257e6f2e3ccb8d765217a606e5ee1649df2965edd0&=&format=webp&quality=lossless&width=712&height=473"
             alt="Person working at desk"
             style={{
-              width: '100%', // Ensures image stretches to fill its container
-              height: 'auto', // Maintains aspect ratio
+              width: '100%',
+              height: 'auto',
               borderRadius: '12px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)', // Shadow for the image
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
             }}
           />
         </div>
@@ -151,21 +164,5 @@ const Overview: React.FC = () => {
     </section>
   );
 };
-
-// CSS Keyframes for Fade-up Effect
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes fadeUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`;
-document.head.appendChild(style);
 
 export default Overview;

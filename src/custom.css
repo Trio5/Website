@@ -123,3 +123,119 @@
   }
 }
 
+:root {
+  --text: #ffffff; /* White for general text */
+  --background: #191924; /* Dark background */
+  --secondary: #ffffff; /* White for the circles */
+  --hover: #0D0D0D; /* Hover color */
+  --accent: #242526; /* Active circle color */
+  --hover-text: #000000; /* Text color on hover */
+  --darken-hover: rgba(0, 0, 0, 0.05); /* Slightly lighter darkening for hover */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text); /* Ensure link text is white */
+  text-wrap: nowrap;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  gap: 5%;
+}
+
+#sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 4rem; /* Default width */
+  transition: width 0.3s ease; /* Smooth expansion */
+  padding: 1rem;
+  z-index: 9999; /* Keeps sidebar above content */
+}
+
+#sidebar:hover {
+  width: 12rem; /* Expand sidebar on hover */
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+li {
+  list-style: none;
+  width: 0.8rem; /* Smaller circles */
+  height: 0.8rem; /* Smaller circles */
+  background-color: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Prevent text overflow */
+}
+
+li a {
+  opacity: 0; /* Initially hidden */
+  color: var(--hover-text); /* Hover text color */
+  white-space: nowrap;
+  margin-left: 0.5rem; /* Ensure text spacing */
+  transition: opacity 0.3s ease;
+}
+
+#sidebar:hover li {
+  width: 100%;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px; /* Rounded corners on hover */
+}
+
+#sidebar:hover li a {
+  opacity: 1; /* Show text on hover */
+}
+
+#sidebar li:hover {
+  background-color: var(--darken-hover); /* Slightly lighter darkening on hover */
+}
+
+li.active {
+  background-color: var(--accent); /* Color for active circles */
+}
+
+/* .section {
+  height: 100vh;
+} */
+
+.content {
+  max-width: 50%;
+  padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+  #sidebar {
+    display: none; /* Hide on small screens */
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}

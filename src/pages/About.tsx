@@ -1,7 +1,8 @@
 import React from 'react';
 import { HeroSection2 } from '../components/HeroSection2';
 import CardGrid from '../components/CardGrid';
-import Overview from '../components/Overview'; // Import the Overview component
+import Overview from '../components/Overview'; 
+import { CTASection } from '../components/CTASection'; // Import CTASection
 
 const About: React.FC = () => {
   return (
@@ -16,8 +17,11 @@ const About: React.FC = () => {
 
       {/* Overview Section */}
       <div style={{ padding: '20px' }}>
-        <Overview /> {/* Add the Overview component here, placed last */}
+        <Overview />
       </div>
+
+      {/* CTA Section */}
+      <CTASection />
     </div>
   );
 };
