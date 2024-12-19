@@ -27,15 +27,10 @@
     <!-- Scripts -->
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      // Preloader logic: Hide preloader after page load
       window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        const root = document.getElementById("root");
-
-        // Hide preloader and show React app
-        preloader.style.display = "none";
-        root.style.display = "block";
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("root").style.display = "block";
       });
-    </script>
+    </script>    
   </body>
 </html>

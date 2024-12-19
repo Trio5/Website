@@ -130,7 +130,7 @@
   --hover: #0D0D0D; /* Hover color */
   --accent: #242526; /* Active circle color */
   --hover-text: #000000; /* Text color on hover */
-  --darken-hover: rgba(0, 0, 0, 0.05); /* Slightly lighter darkening for hover */
+  --darken-hover: rgba(83, 67, 67, 0.377); /* Slightly lighter darkening for hover */
 }
 
 body {

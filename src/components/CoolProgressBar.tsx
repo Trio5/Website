@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,19 +57,59 @@ const CoolProgressBar: React.FC = () => {
     <div id="sidebar" ref={sidebarRef}>
       <ul className="progress-bar">
         <li>
-          <a href="#hero-section">Home</a>
+          <Link
+            to="hero-section"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
+          >
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#technology">Technology</a>
+          <Link
+            to="technology"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
+          >
+            Technology
+          </Link>
         </li>
         <li>
-          <a href="#product-card">Products</a>
+          <Link
+            to="product-card"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
+          >
+            Products
+          </Link>
         </li>
         <li>
-          <a href="#features">Features</a>
+          <Link
+            to="features"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
+          >
+            Features
+          </Link>
         </li>
         <li>
-          <a href="#cta-section">Contact Us</a>
+          <Link
+            to="cta-section"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
+          >
+            Contact Us
+          </Link>
         </li>
       </ul>
     </div>
