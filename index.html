@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NerfTech</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/Website/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/Website/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/Website/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Website/apple-touch-icon.png" />
+    <link rel="icon" href="/Website/favicon.ico" />
+
+    <!-- Styles -->
+    <script type="module" crossorigin src="/Website/assets/index-DIQu-cWD.js"></script>
+    <link rel="stylesheet" crossorigin href="/Website/assets/index-D00E8Wu7.css">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Root element for React -->
+    <div id="root" style="display: none;"></div>
+
+    <!-- Scripts -->
+    <script>
+      // Preloader logic: Hide preloader after page load
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        const root = document.getElementById("root");
+
+        // Hide preloader and show React app
+        preloader.style.display = "none";
+        root.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
